@@ -6,24 +6,22 @@
     <meta name="description" content="Course home page for WDD 231 - Web Frontend Development">
     <meta name="author" content="Victor Henriquez">
     <title>WDD 231 - Victor Henriquez</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap">
+    </noscript>
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
-    
-    <!-- JavaScript (defer) -->
     <script src="scripts/navigation.js" defer></script>
-    <script src="scripts/date.js" defer></script>
+    <script src="scripts/date.js" defer></script>           
     <script src="scripts/courses.js" defer></script>
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <!-- Logo con emoji - luego lo reemplazas con tu SVG -->
-            <div class="logo">👨‍💻</div>
+            <img src="images/logo.webp" alt="Logo de Victor Henriquez"  class="logo" />
             <span class="name">Victor Henriquez</span>
         </div>
         <button id="menu-toggle" aria-label="Menu">☰</button>
@@ -40,7 +38,6 @@
     <main>
         <h1>Home</h1>
 
-        <!-- Section 1: Courses -->
         <section class="courses-section">
             <h2>Web and Computer Programming Certificate</h2>
             <div class="filter-buttons">
@@ -49,14 +46,12 @@
                 <button id="show-cse">CSE Courses</button>
             </div>
             <div id="courses-container" class="courses-grid">
-                <!-- Courses will be dynamically loaded here -->
             </div>
             <div class="total-credits">
                 <p>Total Credits: <span id="total-credits">0</span></p>
             </div>
         </section>
 
-        <!-- Section 2: Location -->
         <section class="location-section">
             <h2>Location</h2>
             <div class="location-content">
@@ -64,17 +59,21 @@
             </div>
         </section>
 
-        <!-- Section 3: Additional Info -->
         <section class="info-section">
             <h2>About Me</h2>
-            <p>Web development student passionate about creating responsive and user-friendly websites.</p>
+            <p>WordPress Web Designer & SEO Specialist with 5+ years building high
+converting websites for businesses across the US and Latin America. 
+Expert in WordPress, Elementor, and advanced SEO. I create conversion
+optimized sites that drive real business results. Delivered 100+ projects
+with proven track record of increasing organic traffic by 40%+ and
+improving site performance by 60%. </p>
         </section>
     </main>
 
     <footer>
         <div class="social-links">
-            <a href="https://github.com/tuusuario" target="_blank">🐙 GitHub</a>
-            <a href="https://www.linkedin.com/in/victor-henriquez-/" target="_blank">🔗 LinkedIn</a>
+            <a href="https://github.com/victorjosedev" target="_blank"> GitHub </a>
+            <a href="https://www.linkedin.com/in/victor-henriquez-/" target="_blank"> LinkedIn</a>
         </div>
         <div class="footer-info">
             <p>© <span id="currentyear"></span> Victor Henriquez - Barquisimeto, Venezuela</p>

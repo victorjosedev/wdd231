@@ -1,6 +1,4 @@
-// date.js - Copyright dinámico y última modificación
-
-// Copyright year - dinámico
+// Copyright year 
 const currentYearSpan = document.getElementById('currentyear');
 if (currentYearSpan) {
     const currentYear = new Date().getFullYear();
