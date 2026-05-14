@@ -1,0 +1,55 @@
+/* larger.css - Pantallas de 768px en adelante */
+
+@media screen and (min-width: 768px) {
+    
+    /* Cambios en el header */
+    #menu-toggle {
+        display: none;
+    }
+    
+    /* Navegación horizontal */
+    #primary-nav {
+        max-height: none !important;
+    }
+    
+    #primary-nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    #primary-nav li {
+        border-bottom: none;
+    }
+    
+    #primary-nav a {
+        padding: 1rem 1.5rem;
+    }
+    
+    /* Grid de cursos - 2 columnas en tablet/desktop */
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Ajustes de padding para mejor espaciado */
+    main {
+        padding: 2rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Pantallas grandes (desktop) */
+@media screen and (min-width: 1024px) {
+    
+    /* Grid de cursos - 3 columnas en desktop grande */
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .filter-buttons button {
+        padding: 0.75rem 2rem;
+        font-size: 1.1rem;
+    }
+}

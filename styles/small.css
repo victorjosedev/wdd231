@@ -1,0 +1,253 @@
+/* small.css - Mobile First (base para 320px en adelante) */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* ========== HEADER ========== */
+header {
+    background-color: #1a4d8c;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 2.5rem;
+}
+
+.name {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Botón hamburguesa */
+#menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    display: block;
+}
+
+/* ========== NAVEGACIÓN ========== */
+#primary-nav {
+    background-color: #0d2b4f;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+#primary-nav.show {
+    max-height: 300px;
+}
+
+#primary-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+#primary-nav li {
+    border-bottom: 1px solid #1a4d8c;
+}
+
+#primary-nav a {
+    display: block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+#primary-nav a:hover {
+    background-color: #1a4d8c;
+}
+
+#primary-nav a.active {
+    background-color: #2e7ab3;
+    font-weight: bold;
+}
+
+/* ========== MAIN ========== */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #1a4d8c;
+    border-bottom: 3px solid #1a4d8c;
+    display: inline-block;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #0d2b4f;
+}
+
+/* ========== SECCIÓN DE CURSOS ========== */
+.courses-section {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-buttons button {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-family: inherit;
+}
+
+.filter-buttons button:hover {
+    background-color: #c0c0c0;
+}
+
+.filter-buttons button.active {
+    background-color: #1a4d8c;
+    color: white;
+}
+
+/* Grid de cursos */
+.courses-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Tarjetas de curso */
+.course-card {
+    background-color: #f9f9f9;
+    border-left: 4px solid #1a4d8c;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.course-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #1a4d8c;
+}
+
+.course-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Cursos completados - estilo diferente */
+.course-card.completed {
+    background-color: #e8f5e9;
+    border-left-color: #4caf50;
+}
+
+.course-card.completed h3 {
+    color: #2e7d32;
+}
+
+/* Total de créditos */
+.total-credits {
+    text-align: center;
+    padding: 1rem;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.total-credits span {
+    color: #1a4d8c;
+    font-size: 1.5rem;
+}
+
+/* ========== LOCATION SECTION ========== */
+.location-section {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.location-content p {
+    font-size: 1.2rem;
+}
+
+/* ========== INFO SECTION ========== */
+.info-section {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ========== FOOTER ========== */
+footer {
+    background-color: #0d2b4f;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: opacity 0.3s;
+}
+
+.social-links a:hover {
+    opacity: 0.7;
+}
+
+.footer-info p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}

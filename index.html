@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Course home page for WDD 231 - Web Frontend Development">
+    <meta name="author" content="Victor Henriquez">
+    <title>WDD 231 - Victor Henriquez</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    
+    <!-- JavaScript (defer) -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/courses.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <!-- Logo con emoji - luego lo reemplazas con tu SVG -->
+            <div class="logo">👨‍💻</div>
+            <span class="name">Victor Henriquez</span>
+        </div>
+        <button id="menu-toggle" aria-label="Menu">☰</button>
+    </header>
+
+    <nav id="primary-nav">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#">Chamber</a></li>
+            <li><a href="#">Final</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Home</h1>
+
+        <!-- Section 1: Courses -->
+        <section class="courses-section">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter-buttons">
+                <button id="show-all" class="active">All Courses</button>
+                <button id="show-wdd">WDD Courses</button>
+                <button id="show-cse">CSE Courses</button>
+            </div>
+            <div id="courses-container" class="courses-grid">
+                <!-- Courses will be dynamically loaded here -->
+            </div>
+            <div class="total-credits">
+                <p>Total Credits: <span id="total-credits">0</span></p>
+            </div>
+        </section>
+
+        <!-- Section 2: Location -->
+        <section class="location-section">
+            <h2>Location</h2>
+            <div class="location-content">
+                <p>📍 Barquisimeto, Venezuela</p>
+            </div>
+        </section>
+
+        <!-- Section 3: Additional Info -->
+        <section class="info-section">
+            <h2>About Me</h2>
+            <p>Web development student passionate about creating responsive and user-friendly websites.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/tuusuario" target="_blank">🐙 GitHub</a>
+            <a href="https://www.linkedin.com/in/victor-henriquez-/" target="_blank">🔗 LinkedIn</a>
+        </div>
+        <div class="footer-info">
+            <p>© <span id="currentyear"></span> Victor Henriquez - Barquisimeto, Venezuela</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
