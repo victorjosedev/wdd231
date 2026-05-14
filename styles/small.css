@@ -158,6 +158,7 @@ h2 {
     min-height: 200px; 
 }
 
+
 .course-card {
     background-color: #f9f9f9;
     border-left: 4px solid #1a4d8c;
@@ -254,8 +255,4 @@ footer {
 
 .courses-section, h2 {
     text-align: center;
-}
-
-.courses-grid {
-    min-height: 200px;
 }
