@@ -5,29 +5,29 @@ const gridBtn = document.getElementById('gridBtn');
 const listBtn = document.getElementById('listBtn');
 let membersData = [];
 
-async function fetchMembers(){
-  try{
+async function fetchMembers() {
+  try {
     const res = await fetch(dataPath);
     membersData = await res.json();
     renderGrid();
-  }catch(err){
+  } catch (err) {
     console.error('Failed to load members', err);
     directory.innerHTML = '<p>Unable to load member data.</p>';
   }
 }
 
-function membershipBadge(level){
-  if(level===3) return '<span class="badge level-3">Gold</span>';
-  if(level===2) return '<span class="badge level-2">Silver</span>';
+function membershipBadge(level) {
+  if (level === 3) return '<span class="badge level-3">Gold</span>';
+  if (level === 2) return '<span class="badge level-2">Silver</span>';
   return '<span class="badge level-1">Member</span>';
 }
 
-function renderGrid(){
+function renderGrid() {
   directory.innerHTML = '';
   directory.classList.add('grid');
   directory.classList.remove('list');
-  gridBtn.setAttribute('aria-pressed','true');
-  listBtn.setAttribute('aria-pressed','false');
+  gridBtn.setAttribute('aria-pressed', 'true');
+  listBtn.setAttribute('aria-pressed', 'false');
 
   membersData.forEach((m, i) => {
     const card = document.createElement('article');
@@ -76,12 +76,12 @@ function renderGrid(){
   });
 }
 
-function renderList(){
+function renderList() {
   directory.innerHTML = '';
   directory.classList.add('list');
   directory.classList.remove('grid');
-  gridBtn.setAttribute('aria-pressed','false');
-  listBtn.setAttribute('aria-pressed','true');
+  gridBtn.setAttribute('aria-pressed', 'false');
+  listBtn.setAttribute('aria-pressed', 'true');
 
   membersData.forEach(m => {
     const item = document.createElement('div');
