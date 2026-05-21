@@ -1,0 +1,36 @@
+/* Larger viewport tweaks */
+@media (min-width:900px) {
+  .site-title {
+    font-size: 1.8rem;
+  }
+
+  .wrap {
+    max-width: 1000px;
+  }
+}
+
+/* membership badges */
+.badge {
+  display: inline-block;
+  padding: .25rem .5rem;
+  border-radius: 3px;
+  font-size: .8rem;
+  color: #fff;
+  margin-top: .5rem;
+}
+
+.badge.level-3 {
+  background: #c59d00;
+}
+
+/* gold */
+.badge.level-2 {
+  background: #9aa0a6;
+}
+
+/* silver */
+.badge.level-1 {
+  background: #6b9b6b;
+}
+
+/* member */

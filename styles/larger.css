@@ -1,48 +1,59 @@
 @media screen and (min-width: 768px) {
-    
+
     #menu-toggle {
         display: none;
     }
-    
+
+    /* center header/logo on tablet widths when menu toggle is hidden */
+    header {
+        justify-content: center;
+    }
+
+    .logo-container {
+        justify-content: center;
+    }
+
     #primary-nav {
         max-height: none !important;
     }
-    
+
     #primary-nav ul {
         flex-direction: row;
         justify-content: center;
     }
-    
+
     #primary-nav li {
         border-bottom: none;
     }
-    
+
     #primary-nav a {
         padding: 1rem 1.5rem;
     }
-    
+
     .courses-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     main {
         padding: 2rem;
     }
-    
+
     h1 {
         font-size: 2.5rem;
     }
-    .courses-section, h2 {
+
+    .courses-section,
+    h2 {
         text-align: center;
-    }   
+    }
 }
 
 @media screen and (min-width: 1024px) {
-    
+
     .courses-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .filter-buttons button {
         padding: 0.75rem 2rem;
         font-size: 1.1rem;
@@ -55,9 +66,11 @@
     .logo-container {
         justify-content: center;
     }
+
     .location-content {
         text-align: center;
     }
+
     .info-section p {
         text-align: center;
     }

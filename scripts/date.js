@@ -11,3 +11,4 @@ if (lastModifiedParagraph) {
     const lastModified = document.lastModified;
     lastModifiedParagraph.textContent = `Last Modified: ${lastModified}`;
 }
+ 

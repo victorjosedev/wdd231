@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Chamber Directory — Victor Henriquez</title>
+  <meta name="description" content="Directory of chamber members for the local community.">
+  <meta name="author" content="Victor Henriquez">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Chamber Directory — Victor Henriquez">
+  <meta property="og:description" content="Find local businesses and members of the chamber.">
+  <meta property="og:image" content="images/favicon.ico">
+  <meta property="og:url" content="/chamber/directory.html">
+
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/small.css">
+  <link rel="stylesheet" href="css/large.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="site-title">Local Chamber Directory</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="controls">
+      <h2>User Layout View Selection</h2>
+      <div class="buttons">
+        <button id="gridBtn" aria-pressed="true">Grid</button>
+        <button id="listBtn" aria-pressed="false">List</button>
+      </div>
+    </section>
+
+    <section id="directory" class="grid" aria-live="polite">
+      <!-- Members loaded here by JS -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Contact: Victor Henriquez — WDD 231</p>
+      <p>&copy; <span id="copyright-year"></span> — Last modified: <span id="last-modified"></span></p>
+    </div>
+  </footer>
+
+  <script src="js/members.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Harbor Coffee Co.",
+    "address": "12 Ocean Ave, Suite 2",
+    "phone": "(555) 123-4567",
+    "website": "https://harborcoffee.example.com",
+    "image": "images/harbor-coffee.webp",
+    "membershipLevel": 3,
+    "description": "Local roaster and café."
+  },
+  {
+    "name": "Pine & Maple Bookstore",
+    "address": "44 Main St",
+    "phone": "(555) 234-5678",
+    "website": "https://pine-maple.example.com",
+    "image": "images/pine-maple.webp",
+    "membershipLevel": 2,
+    "description": "Independent bookstore and events."
+  },
+  {
+    "name": "Summit Hardware",
+    "address": "210 Industrial Rd",
+    "phone": "(555) 345-6789",
+    "website": "https://summithardware.example.com",
+    "image": "images/summit-hardware.webp",
+    "membershipLevel": 1,
+    "description": "Everything for home projects."
+  },
+  {
+    "name": "Blue Harbor Tours",
+    "address": "7 Pier Way",
+    "phone": "(555) 456-7890",
+    "website": "https://blueharbor.example.com",
+    "image": "images/blue-harbor.webp",
+    "membershipLevel": 3,
+    "description": "Guided tours and experiences."
+  },
+  {
+    "name": "Greenway Pharmacy",
+    "address": "89 Elm Blvd",
+    "phone": "(555) 567-8901",
+    "website": "https://greenwaypharmacy.example.com",
+    "image": "images/greenway-pharmacy.webp",
+    "membershipLevel": 1,
+    "description": "Community health and wellness."
+  },
+  {
+    "name": "Harper & Co. Design",
+    "address": "301 Studio Ln",
+    "phone": "(555) 678-9012",
+    "website": "https://harperdesign.example.com",
+    "image": "images/harper-design.webp",
+    "membershipLevel": 2,
+    "description": "Graphic and web design services."
+  },
+  {
+    "name": "Cascade Fitness",
+    "address": "150 Wellness Dr",
+    "phone": "(555) 789-0123",
+    "website": "https://cascadefit.example.com",
+    "image": "images/cascade-fitness.webp",
+    "membershipLevel": 1,
+    "description": "Gym and personal training."
+  }
+]
