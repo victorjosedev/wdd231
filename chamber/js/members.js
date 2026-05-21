@@ -29,13 +29,23 @@ function renderGrid(){
   gridBtn.setAttribute('aria-pressed','true');
   listBtn.setAttribute('aria-pressed','false');
 
-  membersData.forEach(m => {
+  membersData.forEach((m, i) => {
     const card = document.createElement('article');
     card.className = 'card';
 
     const img = document.createElement('img');
+    // Reserve intrinsic size so layout doesn't shift when images load
+    img.width = 140;
+    img.height = 90;
     img.src = m.image;
     img.alt = m.name;
+    img.decoding = 'async';
+    // Make the first image higher priority for LCP; lazy-load others
+    if (i === 0) {
+      img.setAttribute('fetchpriority', 'high');
+    } else {
+      img.loading = 'lazy';
+    }
     img.onerror = () => { img.src = 'images/placeholder.png'; };
 
     const name = document.createElement('h3');
