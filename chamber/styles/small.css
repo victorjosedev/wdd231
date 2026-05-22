@@ -5,6 +5,12 @@
   --accent: #e0a800;
 }
 
+/* Center main heading in directory */
+main.wrap>h1 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
 .wrap {
   max-width: 900px;
   margin: 0 auto;
