@@ -6,8 +6,8 @@
   --accent: #e0a800;
   --accent-hover: #ffc107;
   
-  --color-white: #ffffff;
-  --color-black: #000000;
+  --color-whitee: #ffffff;
+  --color-blackk: #000000;
   
   --text-primary: #333333;
   --text-secondary: #555555;
@@ -49,7 +49,7 @@ main.wrap>h1 {
 
 .site-header {
   background: var(--brand);
-  color: var(--color-white);
+  color: var(--color-whitee);
   padding: .5rem 0;
 }
 
@@ -68,7 +68,7 @@ main.wrap>h1 {
 #menu-toggle {
   background: none;
   border: none;
-  color: var(--color-white);
+  color: var(--color-whitee);
   font-size: 2rem;
   cursor: pointer;
 }
@@ -93,7 +93,7 @@ main.wrap>h1 {
 }
 
 .main-nav a {
-  color: var(--color-white);
+  color: var(--color-whitee);
   text-decoration: none;
   display: block;
   padding: 0.75rem;
@@ -107,7 +107,7 @@ main.wrap>h1 {
 
 .main-nav a.active {
   background-color: var(--accent);
-  color: var(--color-black);
+  color: var(--color-blackk);
   font-weight: bold;
   border-radius: 4px;
 }
@@ -147,7 +147,7 @@ main.wrap>h1 {
   align-items: center;
   text-align: center;
   padding: 1.5rem;
-  color: var(--color-white);
+  color: var(--color-whitee);
 }
 
 .hero-overlay h1 {
@@ -166,7 +166,7 @@ main.wrap>h1 {
 
 .cta-btn {
   background-color: var(--accent);
-  color: var(--color-black);
+  color: var(--color-blackk);
   padding: 0.75rem 1.5rem;
   border-radius: 30px;
   font-weight: bold;
@@ -190,7 +190,7 @@ main.wrap>h1 {
 }
 
 .card-section {
-  background: var(--color-white);
+  background: var(--color-whitee);
   border-radius: 8px;
   box-shadow: 0 2px 5px var(--shadow-light);
   padding: 1.5rem;
@@ -220,7 +220,7 @@ main.wrap>h1 {
 
 .event-date {
   background-color: var(--brand);
-  color: var(--color-white);
+  color: var(--color-whitee);
   font-weight: bold;
   padding: 0.5rem;
   border-radius: 4px;
@@ -408,7 +408,7 @@ main.wrap>h1 {
   margin: 0 .25rem;
   padding: .5rem .75rem;
   border: 1px solid var(--text-dark);
-  background: var(--color-white);
+  background: var(--color-whitee);
   cursor: pointer;
   border-radius: 4px;
   font-weight: 500;
@@ -417,7 +417,7 @@ main.wrap>h1 {
 
 .controls .buttons button[aria-pressed="true"] {
   background-color: var(--brand);
-  color: var(--color-white);
+  color: var(--color-whitee);
   border-color: var(--brand);
 }
 
