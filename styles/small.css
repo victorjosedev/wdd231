@@ -50,8 +50,44 @@ header {
     display: block;
 }
 
+/* Wayfinding / breadcrumb */
+.breadcrumb {
+    background-color: #0d2b4f;
+    color: #ffffff;
+    padding: 0.4rem 1rem;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.breadcrumb li::after {
+    content: ">";
+    margin-left: 0.5rem;
+    color: #cfe4ff;
+}
+
+.breadcrumb li:last-child::after {
+    content: "";
+}
+
+.breadcrumb a {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.breadcrumb a[aria-current="page"] {
+    font-weight: 700;
+    opacity: 1;
+}
+
 nav {
-    color:#ffffff;
+    color: #ffffff;
 }
 
 #primary-nav {
@@ -155,7 +191,7 @@ h2 {
     grid-template-columns: 1fr;
     gap: 1rem;
     margin-bottom: 1.5rem;
-    min-height: 200px; 
+    min-height: 200px;
 }
 
 
@@ -253,6 +289,7 @@ footer {
     font-size: 0.9rem;
 }
 
-.courses-section, h2 {
+.courses-section,
+h2 {
     text-align: center;
 }

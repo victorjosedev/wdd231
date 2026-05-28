@@ -35,10 +35,16 @@
             <img src="images/logo.webp" alt="Logo de Victor Henriquez" class="logo">
             <span class="name">Victor Henriquez</span>
         </div>
-        <button id="menu-toggle" aria-label="Menu">☰</button>
+        <button id="menu-toggle" aria-label="Menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
     </header>
 
-    <nav id="primary-nav">
+    <nav id="breadcrumb" aria-label="Breadcrumb" class="breadcrumb" role="navigation">
+        <ol>
+            <li><a href="index.html">Home</a></li>
+        </ol>
+    </nav>
+
+    <nav id="primary-nav" role="navigation" aria-label="Primary">
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="#">Chamber</a></li>
