@@ -20,14 +20,14 @@
   
   --card-bg-alt: #f7f7f7;
   
-  /* Alpha transparency colors */
-  --bg-overlay: rgba(0, 0, 0, 0.55);
-  --shadow-text: rgba(0, 0, 0, 0.8);
-  --shadow-light: rgba(0, 0, 0, 0.1);
-  --shadow-medium: rgba(0, 0, 0, 0.15);
-  --shadow-button: rgba(0, 0, 0, 0.2);
-  --shadow-logo-border: rgba(0, 0, 0, 0.06);
-  --shadow-logo: rgba(0, 0, 0, 0.04);
+  /* Alpha transparency colors (converted to 8-digit HEX) */
+  --bg-overlay: #0000008c;
+  --shadow-text: #000000cc;
+  --shadow-light: #0000001a;
+  --shadow-medium: #00000026;
+  --shadow-button: #00000033;
+  --shadow-logo-border: #0000000f;
+  --shadow-logo: #0000000a;
 
   /* Badge colors */
   --badge-level-3: #c59d00;
