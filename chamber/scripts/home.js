@@ -30,7 +30,7 @@ async function fetchWeather() {
     weatherDesc.textContent = desc;
     weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
     weatherIcon.alt = desc;
-    weatherIcon.style.display = 'inline-block';
+    weatherIcon.classList.add('show');
 
     // 2. Fetch 3-Day Forecast
     const forecastRes = await fetch(forecastUrl);
