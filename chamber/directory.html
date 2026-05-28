@@ -28,14 +28,17 @@
 
 <body>
   <header class="site-header">
-    <div class="wrap">
-      <div class="site-title">Local Chamber Directory</div>
-      <nav class="main-nav">
+    <div class="wrap header-wrap">
+      <div class="logo-area">
+        <img src="images/chamber-logo.webp" alt="Barquisimeto Chamber Logo" class="chamber-logo" width="60" height="60">
+        <div class="site-title">Barquisimeto Chamber</div>
+      </div>
+      <button id="menu-toggle" aria-label="Menu">☰</button>
+      <nav class="main-nav" id="primary-nav">
         <ul>
+          <li><a href="index.html">Home</a></li>
           <li><a href="directory.html">Directory</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#">Join</a></li>
         </ul>
       </nav>
     </div>
@@ -56,13 +59,14 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
+    <div class="wrap footer-wrap">
       <p>Contact: Victor Henriquez — WDD 231</p>
       <p>&copy; <span id="copyright-year"></span> — Last modified: <span id="last-modified"></span></p>
     </div>
   </footer>
 
   <script src="scripts/members.js" type="module"></script>
+  <script src="scripts/navigation.js" defer></script>
 </body>
 
 </html>

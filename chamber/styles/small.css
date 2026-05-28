@@ -28,18 +28,342 @@ main.wrap>h1 {
   font-size: 1.25rem;
 }
 
+.header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#menu-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.main-nav {
+  display: none;
+  width: 100%;
+}
+
+.main-nav.open {
+  display: block;
+}
+
 .main-nav ul {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: .5rem;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+  text-align: center;
 }
 
 .main-nav a {
   color: #fff;
   text-decoration: none;
+  display: block;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
 }
 
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+.main-nav a.active {
+  background-color: var(--accent);
+  color: #000;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Home Page Layout */
+.main-home {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.hero-picture img {
+  width: 100%;
+  height: auto;
+  min-height: 250px;
+  max-height: 450px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  color: #fff;
+}
+
+.hero-overlay h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Space Mono', monospace;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.hero-overlay p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.cta-btn {
+  background-color: var(--accent);
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+  background-color: #ffc107;
+  text-decoration: underline;
+}
+
+/* Home Grid Content Sections */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.card-section {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border-top: 5px solid var(--brand);
+}
+
+.card-section h2 {
+  font-size: 1.35rem;
+  margin-bottom: 1.25rem;
+  color: var(--brand);
+  font-family: 'Space Mono', monospace;
+  border-bottom: 2px solid var(--muted);
+  padding-bottom: 0.5rem;
+}
+
+/* Events Styles */
+.event-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+}
+
+.event-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.event-date {
+  background-color: var(--brand);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 4px;
+  min-width: 60px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.event-details h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.event-details p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Weather Styles */
+.weather-current {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.weather-main-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.weather-main-info img {
+  width: 64px;
+  height: 64px;
+}
+
+.temp-display {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.weather-desc-text {
+  font-size: 1.05rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 1rem 0;
+}
+
+.weather-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #444;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.forecast-item {
+  background: var(--muted);
+  padding: 0.5rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forecast-day {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.forecast-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.forecast-temp {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Business Spotlights Styles */
+.spotlights-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.spotlight-card {
+  background: var(--muted);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.spotlight-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.spotlight-name {
+  font-size: 1.1rem;
+  color: var(--brand);
+  margin: 0;
+}
+
+.spotlight-divider {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 0.5rem 0;
+}
+
+.spotlight-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.spotlight-logo {
+  max-width: 120px;
+  height: auto;
+  border-radius: 4px;
+  align-self: center;
+}
+
+.spotlight-info {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+.spotlight-desc {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.spotlight-detail {
+  margin-bottom: 0.25rem;
+}
+
+.spotlight-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.spotlight-link:hover {
+  text-decoration: underline;
+}
+
+/* Directory Grid / List Styles */
 .controls {
   text-align: center;
   margin: 1rem 0;
@@ -51,6 +375,15 @@ main.wrap>h1 {
   border: 1px solid #444;
   background: #fff;
   cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.controls .buttons button[aria-pressed="true"] {
+  background-color: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
 }
 
 #directory.grid {
@@ -113,10 +446,17 @@ main.wrap>h1 {
 
 .site-footer {
   margin-top: 2rem;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   background: var(--muted);
-  font-size: .9rem;
+  font-size: .95rem;
   color: #333;
+}
+
+.footer-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 @media (max-width:420px) {

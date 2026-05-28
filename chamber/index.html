@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Barquisimeto Chamber of Commerce — Home</title>
+  <meta name="description" content="Home page of the Barquisimeto Chamber of Commerce. Discover local community events, weather, and business spotlights.">
+  <meta name="author" content="Victor Henriquez">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Barquisimeto Chamber of Commerce — Home">
+  <meta property="og:description"
+    content="Discover and connect with local businesses, check community events, local weather, and highlights of our member spotlights in Barquisimeto.">
+  <meta property="og:image" content="https://victorjosedev.github.io/wdd231/images/logo.webp">
+  <meta property="og:url" content="https://victorjosedev.github.io/wdd231/chamber/index.html">
+
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/large.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap header-wrap">
+      <div class="logo-area">
+        <img src="images/chamber-logo.webp" alt="Barquisimeto Chamber Logo" class="chamber-logo" width="60" height="60">
+        <div class="site-title">Barquisimeto Chamber</div>
+      </div>
+      <button id="menu-toggle" aria-label="Menu">☰</button>
+      <nav class="main-nav" id="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="#">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap main-home">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <picture class="hero-picture">
+        <img src="images/Barquisimeto.webp" alt="Beautiful landscape view of Barquisimeto city" fetchpriority="high">
+      </picture>
+      <div class="hero-overlay">
+        <h1>Empowering Barquisimeto Businesses</h1>
+        <p>Connecting, supporting, and growing our local economy together.</p>
+        <a href="join.html" class="cta-btn">Join the Chamber</a>
+      </div>
+    </section>
+
+    <!-- Grid Container for Events, Weather & Spotlights -->
+    <div class="home-grid">
+      <!-- Events Section -->
+      <section class="card-section events-card">
+        <h2>Upcoming Events</h2>
+        <div class="event-item">
+          <span class="event-date">Jun 10</span>
+          <div class="event-details">
+            <h3>Monthly Networking Mixer</h3>
+            <p>Connect with local leaders at El Obelisco Grand Plaza.</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <span class="event-date">Jun 24</span>
+          <div class="event-details">
+            <h3>Digital Marketing Seminar</h3>
+            <p>Learn SEO and conversion strategies for small businesses.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Weather Section -->
+      <section class="card-section weather-card">
+        <h2>Local Weather</h2>
+        <div id="weather-content">
+          <div class="weather-current">
+            <div class="weather-main-info">
+              <img id="weather-icon" src="" alt="Weather Icon" style="display:none;">
+              <span id="current-temp" class="temp-display">--°C</span>
+            </div>
+            <p id="weather-desc" class="weather-desc-text">Loading weather...</p>
+          </div>
+          <hr class="divider">
+          <h3>3-Day Forecast</h3>
+          <div id="forecast-container" class="forecast-grid">
+            <!-- Loaded dynamically by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Spotlights Section -->
+      <section class="card-section spotlights-section">
+        <h2>Business Spotlights</h2>
+        <div id="spotlights-container" class="spotlights-grid">
+          <!-- Random Gold/Silver members loaded dynamically by JS -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-wrap">
+      <p>Contact: Victor Henriquez — WDD 231</p>
+      <p>&copy; <span id="copyright-year"></span> — Last modified: <span id="last-modified"></span></p>
+    </div>
+  </footer>
+
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/home.js" type="module"></script>
+</body>
+
+</html>
