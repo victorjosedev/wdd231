@@ -8,10 +8,11 @@
   <meta name="description" content="Submit your membership application to join the local chamber of commerce and access benefits, events, and networking opportunities.">
   <meta name="author" content="Victor Henriquez">
   <link rel="icon" href="images/favicon.ico">
-  <!-- Google Fonts preload -->
+  <!-- Google Fonts preload non-blocking -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"></noscript>
 
   <meta property="og:title" content="Join the Chamber — Victor Henriquez">
   <meta property="og:description" content="Submit your membership application to join the local chamber and unlock benefits, event discounts, and promotional opportunities.">
@@ -20,8 +21,9 @@
 
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
-  <link rel="stylesheet" href="styles/large.css">
   <link rel="stylesheet" href="styles/join.css">
+  <link rel="stylesheet" href="styles/large.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="styles/large.css"></noscript>
 </head>
 
 <body>
