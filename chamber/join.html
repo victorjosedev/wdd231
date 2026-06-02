@@ -28,7 +28,8 @@
   <header class="site-header">
     <div class="wrap">
       <div class="site-title">Local Chamber — Join</div>
-      <nav class="main-nav">
+      <button id="menu-toggle" aria-label="Menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+      <nav id="primary-nav" class="main-nav" role="navigation" aria-label="Primary">
         <ul>
           <li><a href="directory.html">Directory</a></li>
           <li><a href="#">Events</a></li>
@@ -168,6 +169,7 @@
     </div>
   </footer>
 
+  <script src="scripts/navigation.js" defer></script>
   <script src="scripts/join.js" defer></script>
 </body>
 
