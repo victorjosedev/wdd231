@@ -146,19 +146,26 @@ main.wrap>h1 {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-top: 1rem;
+  align-items: center;
   padding: 0;
   list-style: none;
-  text-align: center;
+  margin: 0.75rem 0;
 }
 
 .main-nav a {
   color: var(--color-whitee);
   text-decoration: none;
   display: block;
-  padding: 0.75rem;
+  padding: 0.75rem 1rem;
   font-size: 1.1rem;
-  transition: all 0.2s ease;
+  transition: background-color 0.15s, transform 0.12s;
+  width: 100%;
+  max-width: 280px;
+}
+
+.main-nav a:hover, .main-nav a:focus {
+  background: #ffffff0d;
+  transform: translateY(-2px);
 }
 
 .main-nav a:hover {
