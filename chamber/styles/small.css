@@ -84,13 +84,6 @@ main.wrap>h1 {
   flex-wrap: wrap;
 }
 
-#menu-toggle {
-  background: none;
-  border: none;
-  color: var(--color-whitee);
-  font-size: 2rem;
-  cursor: pointer;
-}
 
 .main-nav {
   display: none;
