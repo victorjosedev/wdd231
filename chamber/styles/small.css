@@ -5,21 +5,21 @@
   --muted: #f2f2f2;
   --accent: #e0a800;
   --accent-hover: #ffc107;
-  
+
   --color-whitee: #ffffff;
   --color-blackk: #000000;
-  
+
   --text-primary: #333333;
   --text-secondary: #555555;
   --text-light: #666666;
   --text-dark: #444444;
-  
+
   --border-light: #dddddd;
   --border-muted: #cccccc;
   --border-split: #e6e6e6;
-  
+
   --card-bg-alt: #f7f7f7;
-  
+
   /* Alpha transparency colors (converted to 8-digit HEX) */
   --bg-overlay: #0000008c;
   --shadow-text: #000000cc;
@@ -76,10 +76,70 @@ main.wrap>h1 {
 .main-nav {
   display: none;
   width: 100%;
+  transition: max-height 0.25s ease, opacity 0.25s;
+  max-height: 0;
+  overflow: hidden;
 }
 
 .main-nav.open {
   display: block;
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* Toggle button styling */
+#menu-toggle {
+  background: none;
+  border: 2px solid var(--color-whitee);
+  color: var(--color-whitee);
+  font-size: 1.25rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+#menu-toggle[aria-expanded="true"] {
+  background: var(--accent);
+  color: #000000;
+}
+
+/* Desktop layout: center navigation and add hover/focus effects */
+@media (min-width: 760px) {
+  #menu-toggle {
+    display: none;
+  }
+
+  .main-nav {
+    display: block;
+    width: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .main-nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .main-nav a {
+    padding: 0.5rem 0.75rem;
+    color: var(--color-whitee);
+    transition: color 0.15s, background-color 0.15s, transform 0.15s;
+  }
+
+  .main-nav a:hover,
+  .main-nav a:focus {
+    color: var(--color-whitee);
+    background: #ffffff0d;
+    transform: translateY(-2px);
+    text-decoration: none;
+    border-radius: 4px;
+  }
 }
 
 .main-nav ul {
