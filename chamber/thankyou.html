@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Thank You — Victor Henriquez</title>
+  <meta name="description" content="Thank you for applying to join the chamber.">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/large.css">
+  <style>
+    .result { background:#f7f7f7; padding:1rem; border-radius:8px; border:1px solid #ddd; }
+    .result dt { font-weight:700; }
+    .result dd { margin:0 0 0.75rem 0; }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="site-title">Local Chamber — Thank You</div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Thank you for your application</h1>
+    <p>We appreciate your interest in joining the chamber. Below is the information you submitted.</p>
+
+    <section class="result" aria-live="polite">
+      <dl id="resultList">
+        <dt>First Name</dt>
+        <dd id="out-firstname"></dd>
+
+        <dt>Last Name</dt>
+        <dd id="out-lastname"></dd>
+
+        <dt>Email</dt>
+        <dd id="out-email"></dd>
+
+        <dt>Cell Phone</dt>
+        <dd id="out-phone"></dd>
+
+        <dt>Organization</dt>
+        <dd id="out-organization"></dd>
+
+        <dt>Submitted At</dt>
+        <dd id="out-timestamp"></dd>
+      </dl>
+    </section>
+
+    <p><a href="join.html">Submit another application</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Contact: Victor Henriquez — WDD 231</p>
+    </div>
+  </footer>
+
+  <script>
+    // read GET params and populate fields
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('out-firstname').textContent = params.get('firstname') || '';
+    document.getElementById('out-lastname').textContent = params.get('lastname') || '';
+    document.getElementById('out-email').textContent = params.get('email') || '';
+    document.getElementById('out-phone').textContent = params.get('phone') || '';
+    document.getElementById('out-organization').textContent = params.get('organization') || '';
+    const ts = params.get('timestamp');
+    document.getElementById('out-timestamp').textContent = ts ? new Date(ts).toLocaleString() : '';
+  </script>
+</body>
+
+</html>
