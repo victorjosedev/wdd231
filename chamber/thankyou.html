@@ -5,16 +5,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Thank You — Victor Henriquez</title>
-  <meta name="description" content="Thank you for applying to join the chamber.">
+  <meta name="description" content="Thank you for submitting your chamber membership application. Below is the information you provided.">
+  <meta name="author" content="Victor Henriquez">
   <link rel="icon" href="images/favicon.ico">
+  <!-- Google Fonts preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <meta property="og:title" content="Thank You — Victor Henriquez">
+  <meta property="og:description" content="Thank you for applying to the local chamber — your submission has been received.">
+  <meta property="og:image" content="https://victorjosedev.github.io/wdd231/images/logo.webp">
+  <meta property="og:url" content="https://victorjosedev.github.io/wdd231/chamber/thankyou.html">
+
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/large.css">
-  <style>
-    .result { background:#f7f7f7; padding:1rem; border-radius:8px; border:1px solid #ddd; }
-    .result dt { font-weight:700; }
-    .result dd { margin:0 0 0.75rem 0; }
-  </style>
+  <link rel="stylesheet" href="styles/thankyou.css">
 </head>
 
 <body>
@@ -67,17 +74,7 @@
     </div>
   </footer>
 
-  <script>
-    // read GET params and populate fields
-    const params = new URLSearchParams(window.location.search);
-    document.getElementById('out-firstname').textContent = params.get('firstname') || '';
-    document.getElementById('out-lastname').textContent = params.get('lastname') || '';
-    document.getElementById('out-email').textContent = params.get('email') || '';
-    document.getElementById('out-phone').textContent = params.get('phone') || '';
-    document.getElementById('out-organization').textContent = params.get('organization') || '';
-    const ts = params.get('timestamp');
-    document.getElementById('out-timestamp').textContent = ts ? new Date(ts).toLocaleString() : '';
-  </script>
+  <script src="scripts/thankyou.js" defer></script>
 </body>
 
 </html>
