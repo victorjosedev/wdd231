@@ -50,7 +50,15 @@ main.wrap>h1 {
 .site-header {
   background: var(--brand);
   color: var(--color-whitee);
-  padding: .5rem 0;
+  padding: .75rem 0;
+}
+
+/* Center header content: title and nav stacked and centered */
+.site-header .wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .site-title {
