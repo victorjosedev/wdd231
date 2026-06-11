@@ -66,10 +66,17 @@ main.wrap>h1 {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 2rem; /* moderate separation */
+    gap: 2rem;
+    /* moderate separation */
   }
-  .site-title { margin: 0; }
-  .main-nav ul { margin: 0; }
+
+  .site-title {
+    margin: 0;
+  }
+
+  .main-nav ul {
+    margin: 0;
+  }
 }
 
 .site-title {
@@ -175,7 +182,8 @@ main.wrap>h1 {
   max-width: 280px;
 }
 
-.main-nav a:hover, .main-nav a:focus {
+.main-nav a:hover,
+.main-nav a:focus {
   background: #ffffff0d;
   transform: translateY(-2px);
 }
@@ -756,4 +764,27 @@ main.wrap>h1 {
 
 .card-8 {
   grid-area: h;
+}
+
+/* Override: force header layout on Discover - logo left, hamburger right on mobile */
+header.site-header .wrap.header-wrap {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header.site-header .logo-area {
+  display: flex;
+  align-items: center;
+}
+
+header.site-header #menu-toggle {
+  margin-left: auto;
+  background: none;
+  border: 2px solid var(--color-whitee);
+  color: var(--color-whitee);
+  font-size: 1.25rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
 }
