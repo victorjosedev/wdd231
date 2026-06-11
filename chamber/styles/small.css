@@ -77,6 +77,21 @@ main.wrap>h1 {
   .main-nav ul {
     margin: 0;
   }
+
+  /* Desktop overrides: center header content and ensure nav items don't expand */
+  .header-wrap {
+    justify-content: center;
+  }
+
+  .main-nav ul {
+    gap: 2.5rem;
+  }
+
+  .main-nav a {
+    width: auto;
+    max-width: none;
+    padding: 0.5rem 1rem;
+  }
 }
 
 .site-title {
