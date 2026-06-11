@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mountain E-Riders — Site Plan</title>
+    <meta name="description"
+        content="Website plan for Mountain E-Riders, an e-bike trail riding club. Includes color scheme, typography, wireframes, and project scope.">
+    <meta name="author" content="Victor Henriquez">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mountain E-Riders — Site Plan">
+    <meta property="og:description" content="Planning document for a community e-bike trail riding club website.">
+    <meta property="og:url" content="https://victorjosedev.github.io/wdd231/finalproject/site-plan.html">
+
+    <link rel="icon" href="../images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/plan.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="wrap">
+            <h1>Mountain E-Riders — Site Plan</h1>
+            <p class="subtitle">A blueprint for building a dynamic e-bike trail riding club website</p>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <!-- SITE NAME -->
+        <section class="plan-section">
+            <h2>Site Name</h2>
+            <p><strong>Mountain E-Riders</strong></p>
+            <p>This name directly communicates the core identity of the organization: mountain-focused electric bike
+                enthusiasts. "Mountain" establishes the terrain specialty, "E-Riders" clearly identifies the e-bike
+                community, and the combination is memorable, searchable, and brandable.</p>
+            <p><em>Optional domain:</em> mountaineriders.org</p>
+        </section>
+
+        <!-- SITE PURPOSE -->
+        <section class="plan-section">
+            <h2>Site Purpose</h2>
+            <p>The Mountain E-Riders website serves as a centralized hub for e-bike trail riders in mountainous regions.
+                It provides three core functions:</p>
+            <ul>
+                <li><strong>Trail Discovery:</strong> A searchable directory of e-bike-compatible trails with difficulty
+                    ratings, distance, elevation gain, and real-time weather conditions via API integration.</li>
+                <li><strong>Community Building:</strong> Event listings for group rides, membership registration, and
+                    featured rider spotlights to foster connection among members.</li>
+                <li><strong>Resource Access:</strong> Practical information on e-bike maintenance, safety guidelines,
+                    and local regulations for mountain trail riding.</li>
+            </ul>
+        </section>
+
+        <!-- SCENARIOS -->
+        <section class="plan-section">
+            <h2>Scenarios</h2>
+            <ol>
+                <li>
+                    <strong>"I'm new to e-biking and want to find beginner-friendly mountain trails near me. How do I
+                        know which trails are safe for my skill level?"</strong>
+                    <p>This scenario drives the Trails & Routes page design with filters for difficulty level and gear
+                        checklists per trail.</p>
+                </li>
+                <li>
+                    <strong>"I'm planning to join a group ride next weekend but need to confirm the meeting point and
+                        time. Where can I get this info quickly?"</strong>
+                    <p>This scenario informs the Join/Events page with event cards showing clear date/time/location and
+                        RSVP functionality.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- COLOR SCHEME -->
+        <section class="plan-section">
+            <h2>Color Scheme</h2>
+            <p>All colors are validated against WCAG 2.1 AA standards (minimum 4.5:1 contrast ratio).</p>
+
+            <div class="color-grid">
+                <div class="color-swatch" style="--swatch-bg: #2E7D32;">
+                    <span class="swatch-label">Primary Green</span>
+                    <code>#2E7D32</code>
+                    <small>Headings, nav links, active states<br>Contrast vs white: 7.2:1 ✅</small>
+                </div>
+                <div class="color-swatch" style="--swatch-bg: #E65100;">
+                    <span class="swatch-label">Accent Orange</span>
+                    <code>#E65100</code>
+                    <small>CTAs, badges, hover effects<br>Contrast vs white: 5.8:1 ✅</small>
+                </div>
+                <div class="color-swatch" style="--swatch-bg: #1A1A1A;">
+                    <span class="swatch-label">Dark Background</span>
+                    <code>#1A1A1A</code>
+                    <small>Page backgrounds, card bases</small>
+                </div>
+                <div class="color-swatch" style="--swatch-bg: #FFFFFF; --swatch-text: #1A1A1A;">
+                    <span class="swatch-label">White Text</span>
+                    <code>#FFFFFF</code>
+                    <small>Body text on dark backgrounds<br>Contrast vs #1A1A1A: 16:1 ✅</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- TYPOGRAPHY -->
+        <section class="plan-section">
+            <h2>Typography</h2>
+            <p>Two-font system optimized for readability and brand alignment.</p>
+
+            <div class="type-specimen">
+                <h3 class="specimen-heading">Space Grotesk — Headings & CTAs</h3>
+                <p class="specimen-body">Used for all headings (h1-h3), navigation links, buttons, and badges. Its
+                    geometric sans-serif structure conveys modernity and technical precision. Weights: 400 (regular),
+                    700 (bold).</p>
+
+                <h3 class="specimen-subheading">Inter — Body Text & Paragraphs</h3>
+                <p class="specimen-body">Primary font for all paragraph content, lists, form labels, and metadata.
+                    Designed specifically for screen readability. Weights: 400 (regular), 600 (semibold).</p>
+            </div>
+        </section>
+
+        <!-- WIREFRAMES -->
+        <section class="plan-section">
+            <h2>Wireframes</h2>
+            <p>Low-fidelity layout representations showing content hierarchy and responsive behavior.</p>
+
+            <div class="wireframe-container">
+                <figure class="wireframe">
+                    <figcaption>Mobile View (320px–767px)</figcaption>
+                    <img src="images/wireframe-mobile.png"
+                        alt="Mobile wireframe showing vertical layout with hamburger menu, hero section with e-bike illustration, weather widget, upcoming group rides, trail spotlight, and footer with contact info"
+                        width="375" loading="lazy">
+                </figure>
+
+                <figure class="wireframe">
+                    <figcaption>Desktop View (768px+)</figcaption>
+                    <img src="images/wireframe-desktop.png"
+                        alt="Desktop wireframe showing horizontal navigation, full-width hero banner, three-column grid with weather, events, and trail spotlight, and multi-column footer"
+                        width="720" loading="lazy">
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>Prepared by Victor Henriquez | WDD 231 Final Project Planning</p>
+            <p>Last updated: June 12, 2026</p>
+        </div>
+    </footer>
+</body>
+
+</html>
