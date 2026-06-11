@@ -316,3 +316,23 @@ footer {
 h2 {
     text-align: center;
 }
+
+/* Mobile header alignment fix: logo left, hamburger right */
+header.site-header .header-wrap {
+    display: flex;
+    align-items: center;
+}
+
+header.site-header .logo-area {
+    display: flex;
+    align-items: center;
+}
+
+header.site-header #menu-toggle {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: var(--text-white);
+    font-size: 2rem;
+    cursor: pointer;
+}
