@@ -584,3 +584,176 @@ main.wrap>h1 {
     gap: .25rem;
   }
 }
+
+/* =========================================
+   DISCOVER PAGE STYLES (Mobile Base)
+   ========================================= */
+
+.main-discover {
+  padding: 1rem;
+}
+
+.discover-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.discover-intro h1 {
+  color: var(--brand);
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.discover-intro p {
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Visitor Banner */
+.visitor-banner {
+  background-color: var(--accent);
+  color: var(--color-blackk);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+.visitor-banner button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--color-blackk);
+  padding: 0 0.5rem;
+}
+
+/* Grid Container - SMALL LAYOUT (320px - 640px) */
+.places-grid {
+  display: grid;
+  gap: 1.5rem;
+  /* Layout 1: Single column stack */
+  grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "f"
+    "g"
+    "h";
+}
+
+/* Card Base Styles */
+.place-card {
+  background: var(--color-whitee);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px var(--shadow-light);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  border-top: 4px solid var(--brand);
+}
+
+.place-card h2 {
+  font-size: 1.25rem;
+  color: var(--brand);
+  margin-bottom: 0.75rem;
+  font-family: 'Space Mono', monospace;
+}
+
+.place-card figure {
+  margin: 0 0 1rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+  /* Enforces 300x200 ratio responsively */
+  background-color: var(--muted);
+}
+
+.place-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.place-card address {
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.place-card p {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.learn-more-btn {
+  background-color: var(--brand);
+  color: var(--color-whitee);
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.learn-more-btn:hover {
+  background-color: var(--accent);
+  color: var(--color-blackk);
+}
+
+.learn-more-btn:active {
+  transform: scale(0.98);
+}
+
+/* Assign Grid Areas to Cards */
+.card-1 {
+  grid-area: a;
+}
+
+.card-2 {
+  grid-area: b;
+}
+
+.card-3 {
+  grid-area: c;
+}
+
+.card-4 {
+  grid-area: d;
+}
+
+.card-5 {
+  grid-area: e;
+}
+
+.card-6 {
+  grid-area: f;
+}
+
+.card-7 {
+  grid-area: g;
+}
+
+.card-8 {
+  grid-area: h;
+}

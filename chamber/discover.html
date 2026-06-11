@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Barquisimeto Chamber of Commerce — Discover</title>
+    <meta name="description"
+        content="Discover the best places to visit in Barquisimeto. Explore landmarks, parks, museums, and attractions that make our city unique.">
+    <meta name="author" content="Victor Henriquez">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Barquisimeto Chamber of Commerce — Discover">
+    <meta property="og:description"
+        content="Explore the most iconic places in Barquisimeto: landmarks, parks, museums, and cultural attractions.">
+    <meta property="og:image" content="https://victorjosedev.github.io/wdd231/images/logo.webp">
+    <meta property="og:url" content="https://victorjosedev.github.io/wdd231/chamber/discover.html">
+
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="wrap header-wrap">
+            <div class="logo-area">
+                <img src="images/chamber-logo.webp" alt="Barquisimeto Chamber Logo" class="chamber-logo" width="60"
+                    height="60">
+            </div>
+            <button id="menu-toggle" aria-label="Menu">☰</button>
+            <nav class="main-nav" id="primary-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="discover.html" class="active">Discover</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap main-discover">
+        <!-- Page Intro -->
+        <section class="discover-intro">
+            <h1>Discover Barquisimeto</h1>
+            <p>Explore the most iconic places that make our city unique. From historic landmarks to vibrant cultural
+                spaces, Barquisimeto offers unforgettable experiences for visitors and residents alike.</p>
+        </section>
+
+        <!-- Visitor Message Banner (localStorage) -->
+        <div id="visitor-message" class="visitor-banner" role="status" aria-live="polite">
+            <!-- Message injected by JavaScript -->
+        </div>
+
+        <!-- Places Grid Container -->
+        <section class="places-grid" id="places-container">
+            <!-- 8 cards will be dynamically injected by JavaScript -->
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap footer-wrap">
+            <p>Contact: Victor Henriquez — WDD 231</p>
+            <p>&copy; <span id="copyright-year"></span> — Last modified: <span id="last-modified"></span></p>
+        </div>
+    </footer>
+
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/discover.js" type="module"></script>
+</body>
+
+</html>
