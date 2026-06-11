@@ -3,21 +3,21 @@
     --brand-dark: #0d2b4f;
     --brand-accent: #2e7ab3;
     --brand-light: #cfe4ff;
-    
+
     --bg-main: #f5f5f5;
     --bg-card: #ffffff;
     --bg-card-alt: #f9f9f9;
     --bg-button: #e0e0e0;
     --bg-button-hover: #c0c0c0;
-    
+
     --text-main: #333333;
     --text-muted: #666666;
     --text-white: #ffffff;
-    
+
     --success-bg: #e8f5e9;
     --success-border: #4caf50;
     --success-text: #2e7d32;
-    
+
     --shadow-card: #0000001a;
 }
 
