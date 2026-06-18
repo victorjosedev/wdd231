@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mountain E-Riders — Home</title>
+    <meta name="description"
+        content="Join Mountain E-Riders, the premier community for electric mountain bike enthusiasts. Discover trails, join group rides, and connect with fellow e-bike adventurers.">
+    <meta name="author" content="Victor Henriquez">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Mountain E-Riders — Home">
+    <meta property="og:description"
+        content="The premier community for electric mountain bike enthusiasts. Discover trails, join group rides, and connect with fellow e-bike adventurers.">
+    <meta property="og:image" content="https://victorjosedev.github.io/wdd231/finalproject/images/logo.webp">
+    <meta property="og:url" content="https://victorjosedev.github.io/wdd231/finalproject/index.html">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+</head>
+
+<body>
+    <!-- =========================================
+       HEADER & NAVIGATION
+       ========================================= -->
+    <header class="site-header">
+        <div class="wrap header-wrap">
+            <div class="logo-area">
+                <img src="images/logo.webp" alt="Mountain E-Riders Logo" class="site-logo" width="48" height="48">
+                <div class="site-title">Mountain <span>E-Riders</span></div>
+            </div>
+            <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+            <nav class="main-nav" id="primary-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="trails.html">Trails</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =========================================
+       MAIN CONTENT
+       ========================================= -->
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-content wrap">
+                <h1 class="hero-title">Ride Further. Explore More.</h1>
+                <p class="hero-subtitle">Join the premier community for electric mountain bike enthusiasts. Discover
+                    epic trails, connect with fellow riders, and push your limits with the power of e-bikes.</p>
+                <div class="hero-cta">
+                    <a href="trails.html" class="btn btn-primary">Explore Trails</a>
+                    <a href="join.html" class="btn btn-secondary">Join the Club</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section wrap">
+            <div class="about-content">
+                <h2>About Mountain E-Riders</h2>
+                <p class="about-lead">We are a passionate community of electric mountain bike riders dedicated to
+                    exploring the world's most challenging and beautiful trails. Founded in 2020, Mountain E-Riders has
+                    grown from a small group of friends to a thriving community of over 500 members across North
+                    America.</p>
+
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>Our Mission</h3>
+                        <p>To empower riders of all skill levels to explore mountain trails safely and sustainably using
+                            electric bike technology, fostering a community built on adventure, respect for nature, and
+                            shared passion.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>What We Do</h3>
+                        <p>We organize weekly group rides, maintain a curated database of e-bike-friendly trails, host
+                            skills clinics, and advocate for responsible trail access. Whether you're a beginner or an
+                            expert, there's a place for you here.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Why E-Bikes?</h3>
+                        <p>Electric mountain bikes open up new possibilities: climb higher, ride further, and recover
+                            faster. They make the sport more accessible while maintaining the thrill and challenge that
+                            mountain bikers love.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEATHER WIDGET SECTION -->
+        <section class="weather-section wrap">
+            <h2>Trail Weather Conditions</h2>
+            <p class="weather-intro">Check real-time weather conditions for popular riding locations. Plan your rides
+                safely with up-to-date information.</p>
+
+            <div class="weather-widget" id="weather-widget">
+                <div class="weather-loading" id="weather-loading">
+                    <p>Loading weather data...</p>
+                </div>
+                <div class="weather-content" id="weather-content" style="display: none;">
+                    <!-- Weather data will be injected here by JavaScript -->
+                </div>
+                <div class="weather-error" id="weather-error" style="display: none;">
+                    <p>Unable to load weather data. Please try again later.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED RIDERS SECTION -->
+        <section class="riders-section wrap">
+            <h2>Featured Riders</h2>
+            <p class="riders-intro">Meet some of our amazing community members who embody the spirit of Mountain
+                E-Riders.</p>
+
+            <div class="riders-grid" id="riders-container">
+                <!-- Rider cards will be injected here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION SECTION -->
+        <section class="cta-section wrap">
+            <div class="cta-content">
+                <h2>Ready to Start Your Adventure?</h2>
+                <p>Join hundreds of e-bike enthusiasts who are exploring new trails, building skills, and making
+                    lifelong friends. Your next epic ride starts here.</p>
+                <a href="join.html" class="btn btn-primary">Become a Member</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================================
+       FOOTER
+       ========================================= -->
+    <footer class="site-footer">
+        <div class="wrap footer-wrap">
+            <p>&copy; <span id="copyright-year"></span> Mountain E-Riders. All rights reserved.</p>
+            <p>Created by Victor Henriquez for WDD 231</p>
+            <p>
+                <a href="attributions.html">Attributions</a> |
+                <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank" rel="noopener">Project Video</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js" type="module"></script>
+</body>
+
+</html>
