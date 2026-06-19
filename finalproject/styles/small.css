@@ -121,14 +121,15 @@
     min-height: 200px;
 }
 
-.weather-loading,
-.weather-error {
+.weather-loading {
     text-align: center;
     padding: var(--space-lg);
     color: var(--text-secondary);
 }
 
 .weather-error {
+    text-align: center;
+    padding: var(--space-lg);
     color: #ef4444;
 }
 
@@ -754,7 +755,7 @@
     color: var(--text-secondary);
 }
 
-.btn-submit {
+.btn-submit, .site-btn-submit {
     width: 100%;
     padding: 1rem;
     font-size: 1.1rem;

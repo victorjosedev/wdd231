@@ -76,7 +76,7 @@ function renderTrails(trailsToRender) {
           </div>
         </div>
         <button 
-          class="btn btn-primary btn-view-details" 
+          class="site-btn site-btn--primary site-btn-view-details" 
           data-trail-id="${trail.id}"
           aria-label="View details for ${trail.name}">
           View Details
@@ -124,7 +124,7 @@ function initFilters() {
 // Accessible modal with dynamic content
 // =========================================
 function attachModalListeners() {
-  const viewButtons = document.querySelectorAll('.btn-view-details');
+  const viewButtons = document.querySelectorAll('.site-btn-view-details');
 
   viewButtons.forEach(button => {
     button.addEventListener('click', (e) => {

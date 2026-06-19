@@ -4,9 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mountain E-Riders — Application Received</title>
-    <meta name="description" content="Your membership application has been received.">
+    <title>Mountain E-Riders — Membership Application Received</title>
+    <meta name="description" content="Your membership application has been received. We'll contact you with next steps and upcoming events.">
     <meta name="author" content="Victor Henriquez">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Mountain E-Riders — Membership Application Received">
+    <meta property="og:description" content="Your membership application has been received. We'll contact you with next steps and upcoming events.">
+    <meta property="og:image" content="https://victorjosedev.github.io/wdd231/finalproject/images/logo.webp">
+    <meta property="og:url" content="https://victorjosedev.github.io/wdd231/finalproject/join.html">
+    <meta property="og:type" content="website">
 
     <link rel="icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +26,7 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
         <div class="wrap header-wrap">
             <div class="logo-area">
@@ -28,7 +36,7 @@
         </div>
     </header>
 
-    <main class="wrap">
+    <main id="main-content" class="wrap">
         <section class="join-hero">
             <h1>Join Mountain E-Riders</h1>
             <p>Become a member of our community — fill out the application below.</p>
@@ -80,7 +88,7 @@
                         <label for="newsletter">Subscribe to newsletter</label>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-submit">Submit Application</button>
+                    <button type="submit" class="site-btn site-btn--primary site-btn-submit">Submit Application</button>
                 </form>
             </div>
         </section>

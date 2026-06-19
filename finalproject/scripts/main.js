@@ -86,7 +86,7 @@ function renderRiders() {
           <p>Favorite: <em>${rider.favoriteTrail}</em></p>
         </div>
         <button 
-          class="btn btn-secondary btn-rider-details" 
+          class="site-btn site-btn--secondary site-btn-rider-details" 
           data-rider-id="${rider.id}"
           aria-label="View more details about ${rider.name}">
           View Profile
@@ -98,7 +98,7 @@ function renderRiders() {
   ridersContainer.innerHTML = ridersHTML;
 
   // Attach event listeners to each "View Profile" button
-  const riderButtons = document.querySelectorAll('.btn-rider-details');
+  const riderButtons = document.querySelectorAll('.site-btn-rider-details');
   riderButtons.forEach(button => {
     button.addEventListener('click', (e) => {
       const riderId = parseInt(e.target.dataset.riderId);
@@ -138,7 +138,7 @@ function openRiderModal(rider) {
           <span class="stat-label">Favorite Trail</span>
         </div>
       </div>
-      <button class="btn btn-primary modal-close-btn">Close</button>
+      <button class="site-btn site-btn--primary site-btn-modal-close modal-close-btn">Close</button>
     </div>
   `;
 
@@ -249,7 +249,7 @@ function displayWeather(data) {
         placeholder="Enter city name..." 
         value="${name}"
         aria-label="City name for weather">
-      <button class="btn btn-primary" id="update-weather-btn">Update</button>
+      <button class="site-btn site-btn--primary" id="update-weather-btn">Update</button>
     </div>
   `;
 
@@ -339,7 +339,7 @@ function showWelcomeModal() {
           <span>Real-time Weather</span>
         </div>
       </div>
-      <button class="btn btn-primary modal-close-btn">Let's Ride!</button>
+      <button class="site-btn site-btn--primary modal-close-btn site-btn-modal-close">Let's Ride!</button>
     </div>
   `;
 

@@ -334,7 +334,8 @@ p {
 /* =========================================
    BOTONES
    ========================================= */
-.btn {
+/* Legacy class names kept for compatibility; prefer the site-prefixed classes */
+.btn, .site-btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     font-family: var(--font-heading);
@@ -346,24 +347,24 @@ p {
     border: 2px solid transparent;
 }
 
-.btn-primary {
+.btn-primary, .site-btn--primary {
     background: var(--accent);
     color: var(--color-white);
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .site-btn--primary:hover {
     background: var(--accent-hover);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
-.btn-secondary {
+.btn-secondary, .site-btn--secondary {
     background: transparent;
     color: var(--color-green-primary);
     border-color: var(--color-green-primary);
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover, .site-btn--secondary:hover {
     background: var(--color-green-primary);
     color: var(--color-white);
 }
@@ -400,6 +401,28 @@ p {
     clip-path: inset(50%);
     white-space: nowrap;
     border: 0;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    background: var(--color-green-primary);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    z-index: 1000;
+    text-decoration: none;
 }
 
 .text-accent {
