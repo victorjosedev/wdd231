@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mountain E-Riders — Application Received</title>
+    <meta name="description" content="Your membership application has been received.">
+    <meta name="author" content="Victor Henriquez">
+
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/small.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="wrap header-wrap">
+            <div class="logo-area">
+                <img src="images/logo.webp" alt="Mountain E-Riders Logo" class="site-logo" width="48" height="48">
+                <div class="site-title">Mountain <span>E-Riders</span></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="form-action-content">
+            <h1>Application Received! 🎉</h1>
+            <p>Thank you for applying to Mountain E-Riders. Here is a summary of your submission:</p>
+
+            <div class="submission-summary" id="submission-summary">
+                <!-- Data injected by JS -->
+            </div>
+
+            <a href="join.html" class="btn btn-secondary">Back to Join Page</a>
+            <a href="index.html" class="btn btn-primary">Go to Home</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap footer-wrap">
+            <p>&copy; <span id="copyright-year"></span> Mountain E-Riders. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Inline script to display form data from LocalStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update year
+            document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+            // Retrieve data
+            const storedData = localStorage.getItem('membershipApplication');
+            const summaryContainer = document.getElementById('submission-summary');
+
+            if (storedData) {
+                const data = JSON.parse(storedData);
+
+                // Using template literals to display data
+                summaryContainer.innerHTML = `
+          <ul class="summary-list">
+            <li><strong>Name:</strong> ${data.firstName} ${data.lastName}</li>
+            <li><strong>Email:</strong> ${data.email}</li>
+            <li><strong>Phone:</strong> ${data.phone || 'Not provided'}</li>
+            <li><strong>Experience Level:</strong> ${data.experience}</li>
+            <li><strong>Comments:</strong> ${data.comments || 'None'}</li>
+            <li><strong>Newsletter:</strong> ${data.newsletter === 'yes' ? 'Yes' : 'No'}</li>
+          </ul>
+        `;
+            } else {
+                summaryContainer.innerHTML = '<p>No application data found. Please fill out the form on the Join page.</p>';
+            }
+        });
+    </script>
+</body>
+
+</html>

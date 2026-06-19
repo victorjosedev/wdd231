@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mountain E-Riders — Trails & Routes</title>
+    <meta name="description"
+        content="Explore our curated directory of 15+ electric mountain bike trails. Filter by difficulty, view elevation, distance, and real-time trail conditions.">
+    <meta name="author" content="Victor Henriquez">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mountain E-Riders — Trails & Routes">
+    <meta property="og:description" content="Explore our curated directory of 15+ electric mountain bike trails.">
+    <meta property="og:image" content="https://victorjosedev.github.io/wdd231/finalproject/images/logo.webp">
+    <meta property="og:url" content="https://victorjosedev.github.io/wdd231/finalproject/trails.html">
+
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="wrap header-wrap">
+            <div class="logo-area">
+                <img src="images/logo.webp" alt="Mountain E-Riders Logo" class="site-logo" width="48" height="48">
+                <div class="site-title">Mountain <span>E-Riders</span></div>
+            </div>
+            <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+            <nav class="main-nav" id="primary-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="trails.html" class="active">Trails</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="trails-hero wrap">
+            <h1>Trail Directory</h1>
+            <p>Discover the best e-bike trails across North America. Use the filters below to find your next adventure.
+            </p>
+        </section>
+
+        <!-- Filter Controls -->
+        <section class="filter-section wrap">
+            <div class="filter-container" role="group" aria-label="Filter trails by difficulty">
+                <button class="filter-btn active" data-filter="all">All Trails</button>
+                <button class="filter-btn" data-filter="Beginner">Beginner</button>
+                <button class="filter-btn" data-filter="Intermediate">Intermediate</button>
+                <button class="filter-btn" data-filter="Advanced">Advanced</button>
+                <button class="filter-btn" data-filter="Expert">Expert</button>
+            </div>
+            <p class="trail-count" id="trail-count">Showing 15 trails</p>
+        </section>
+
+        <!-- Dynamic Trails Grid -->
+        <section class="trails-grid-section wrap">
+            <div class="trails-grid" id="trails-container">
+                <!-- Cards injected by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Container (Hidden by default) -->
+    <div id="trail-modal" class="modal-overlay" style="display: none;" role="dialog" aria-modal="true"
+        aria-labelledby="modal-trail-title">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div id="modal-body">
+                <!-- Modal content injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="wrap footer-wrap">
+            <p>&copy; <span id="copyright-year"></span> Mountain E-Riders. All rights reserved.</p>
+            <p>Created by Victor Henriquez for WDD 231</p>
+            <p><a href="attributions.html">Attributions</a> | <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
+                    target="_blank" rel="noopener">Project Video</a></p>
+        </div>
+    </footer>
+
+    <script src="scripts/trails.js" type="module"></script>
+</body>
+
+</html>
