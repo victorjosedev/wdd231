@@ -127,11 +127,7 @@
     color: var(--text-secondary);
 }
 
-.weather-error {
-    text-align: center;
-    padding: var(--space-lg);
-    color: #ef4444;
-}
+
 
 /* Weather Content (injected by JS) */
 .weather-location {
@@ -837,6 +833,9 @@
 
 .weather-error {
     display: none;
+    text-align: center;
+    padding: var(--space-lg);
+    color: #ef4444;
 }
 
 /* Modal-specific layout tweaks for injected content */
