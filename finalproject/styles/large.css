@@ -1,0 +1,7 @@
+/* Large screen overrides (kept intentionally simple)
+   This file exists so external validators and deployments can fetch it without 404.
+   Add desktop-specific overrides below when needed. */
+
+@media (min-width: 1024px) {
+  /* Example: keep navigation horizontal on large screens (defaults already handle this) */
+}

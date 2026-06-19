@@ -210,3 +210,21 @@ code {
     color: var(--color-gray-muted);
     font-size: 0.85rem;
 }
+
+/* Swatch utility classes to avoid inline styles */
+.swatch-green {
+    --swatch-bg: #2E7D32;
+}
+
+.swatch-orange {
+    --swatch-bg: #E65100;
+}
+
+.swatch-dark {
+    --swatch-bg: #1A1A1A;
+}
+
+.swatch-white {
+    --swatch-bg: #FFFFFF;
+    --swatch-text: #1A1A1A;
+}

@@ -823,3 +823,47 @@
         grid-template-columns: repeat(4, 1fr);
     }
 }
+
+/* Accessibility: hide modal by default via class instead of inline style */
+.modal-overlay.hidden {
+    display: none;
+}
+
+/* Weather widget states: default hidden, JS toggles visibility */
+.weather-content {
+    display: none;
+}
+
+.weather-error {
+    display: none;
+}
+
+/* Modal-specific layout tweaks for injected content */
+#trail-modal .modal-trail-location {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+#trail-modal .modal-description {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+#trail-modal .modal-trail-stats {
+    margin-bottom: 1rem;
+}
+
+/* Attributions page classes to replace inline styles */
+.attributions-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.return-link {
+    margin-top: 2rem;
+    display: block;
+}

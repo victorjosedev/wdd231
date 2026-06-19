@@ -141,10 +141,10 @@ function openTrailModal(trail) {
   modalBody.innerHTML = `
     <img src="${trail.image}" alt="${trail.name}" class="modal-image" width="600" height="338">
     <h2 id="modal-trail-title">${trail.name}</h2>
-    <p class="trail-location" style="font-size: 1.1rem; margin-bottom: 1rem;">📍 ${trail.location}</p>
-    <p style="margin-bottom: 1rem; line-height: 1.6;">${trail.description}</p>
+    <p class="trail-location modal-trail-location">📍 ${trail.location}</p>
+    <p class="modal-description">${trail.description}</p>
     
-    <div class="trail-stats" style="margin-bottom: 1rem;">
+    <div class="trail-stats modal-trail-stats">
       <div class="trail-stat">
         <span class="trail-stat-value">${trail.distance}</span>
         <span class="trail-stat-label">Distance</span>
