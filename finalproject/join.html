@@ -97,35 +97,7 @@
         </div>
     </footer>
 
-    <script>
-        // Inline script to display form data from LocalStorage
-        document.addEventListener('DOMContentLoaded', () => {
-            // Update year
-            document.getElementById('copyright-year').textContent = new Date().getFullYear();
-
-            // Retrieve data
-            const storedData = localStorage.getItem('membershipApplication');
-            const summaryContainer = document.getElementById('submission-summary');
-
-            if (storedData) {
-                const data = JSON.parse(storedData);
-
-                // Using template literals to display data
-                summaryContainer.innerHTML = `
-          <ul class="summary-list">
-            <li><strong>Name:</strong> ${data.firstName} ${data.lastName}</li>
-            <li><strong>Email:</strong> ${data.email}</li>
-            <li><strong>Phone:</strong> ${data.phone || 'Not provided'}</li>
-            <li><strong>Experience Level:</strong> ${data.experience}</li>
-            <li><strong>Comments:</strong> ${data.comments || 'None'}</li>
-            <li><strong>Newsletter:</strong> ${data.newsletter === 'yes' ? 'Yes' : 'No'}</li>
-          </ul>
-        `;
-            } else {
-                summaryContainer.innerHTML = '<p>No application data found. Please fill out the form on the Join page.</p>';
-            }
-        });
-    </script>
+    <script src="scripts/join.js" type="module"></script>
 </body>
 
 </html>
