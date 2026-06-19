@@ -29,16 +29,65 @@
     </header>
 
     <main class="wrap">
-        <section class="form-action-content">
-            <h1>Application Received! 🎉</h1>
-            <p>Thank you for applying to Mountain E-Riders. Here is a summary of your submission:</p>
+        <section class="join-hero">
+            <h1>Join Mountain E-Riders</h1>
+            <p>Become a member of our community — fill out the application below.</p>
+        </section>
 
-            <div class="submission-summary" id="submission-summary">
-                <!-- Data injected by JS -->
+        <section class="membership-section">
+            <div class="form-section">
+                <h2>Membership Application</h2>
+                <p>Please complete the form and click Submit. You'll see a confirmation page afterwards.</p>
+
+                <form id="membership-form" class="membership-form" novalidate>
+                    <div class="form-group">
+                        <label for="firstName">First name <span class="required">*</span></label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last name <span class="required">*</span></label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Experience level</label>
+                        <select id="experience" name="experience">
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                            <option value="Expert">Expert</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comments">Comments</label>
+                        <textarea id="comments" name="comments" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                        <label for="newsletter">Subscribe to newsletter</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">Submit Application</button>
+                </form>
             </div>
+        </section>
 
-            <a href="join.html" class="btn btn-secondary">Back to Join Page</a>
-            <a href="index.html" class="btn btn-primary">Go to Home</a>
+        <section class="events-section wrap">
+            <h2>Upcoming Events</h2>
+            <div id="events-container" class="events-grid"></div>
         </section>
     </main>
 

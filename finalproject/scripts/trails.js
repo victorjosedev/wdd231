@@ -4,7 +4,7 @@
 // =========================================
 
 // ES Modules Import
-import trails from '../data/trails.mjs';
+import trails from './data/trails.mjs';
 
 // =========================================
 // DOM REFERENCES
@@ -25,16 +25,16 @@ const modalCloseBtn = document.querySelector('.modal-close');
 // 1. NAVIGATION & FOOTER (Reused logic)
 // =========================================
 function initNavigation() {
-    if (!menuToggle || !primaryNav) return;
-    menuToggle.addEventListener('click', () => {
-        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', !isExpanded);
-        primaryNav.classList.toggle('open');
-    });
+  if (!menuToggle || !primaryNav) return;
+  menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    primaryNav.classList.toggle('open');
+  });
 }
 
 function updateCopyrightYear() {
-    if (copyrightYear) copyrightYear.textContent = new Date().getFullYear();
+  if (copyrightYear) copyrightYear.textContent = new Date().getFullYear();
 }
 
 // =========================================
@@ -42,10 +42,10 @@ function updateCopyrightYear() {
 // Uses: Array map(), Template Literals, DOM Manipulation
 // =========================================
 function renderTrails(trailsToRender) {
-    if (!trailsContainer) return;
+  if (!trailsContainer) return;
 
-    // Using map() array method to generate HTML
-    const trailsHTML = trailsToRender.map((trail) => `
+  // Using map() array method to generate HTML
+  const trailsHTML = trailsToRender.map((trail) => `
     <article class="trail-card">
       <div class="trail-image-container">
         <img 
@@ -85,11 +85,11 @@ function renderTrails(trailsToRender) {
     </article>
   `).join('');
 
-    trailsContainer.innerHTML = trailsHTML;
-    trailCountDisplay.textContent = `Showing ${trailsToRender.length} trail${trailsToRender.length !== 1 ? 's' : ''}`;
+  trailsContainer.innerHTML = trailsHTML;
+  trailCountDisplay.textContent = `Showing ${trailsToRender.length} trail${trailsToRender.length !== 1 ? 's' : ''}`;
 
-    // Attach event listeners to new buttons
-    attachModalListeners();
+  // Attach event listeners to new buttons
+  attachModalListeners();
 }
 
 // =========================================
@@ -97,26 +97,26 @@ function renderTrails(trailsToRender) {
 // Uses: Array filter(), Event Listeners
 // =========================================
 function initFilters() {
-    filterButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            // Update active button styling
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            e.target.classList.add('active');
+  filterButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      // Update active button styling
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      e.target.classList.add('active');
 
-            // Get filter value
-            const filterValue = e.target.dataset.filter;
+      // Get filter value
+      const filterValue = e.target.dataset.filter;
 
-            // Using filter() array method
-            let filteredTrails;
-            if (filterValue === 'all') {
-                filteredTrails = trails;
-            } else {
-                filteredTrails = trails.filter(trail => trail.difficulty === filterValue);
-            }
+      // Using filter() array method
+      let filteredTrails;
+      if (filterValue === 'all') {
+        filteredTrails = trails;
+      } else {
+        filteredTrails = trails.filter(trail => trail.difficulty === filterValue);
+      }
 
-            renderTrails(filteredTrails);
-        });
+      renderTrails(filteredTrails);
     });
+  });
 }
 
 // =========================================
@@ -124,21 +124,21 @@ function initFilters() {
 // Accessible modal with dynamic content
 // =========================================
 function attachModalListeners() {
-    const viewButtons = document.querySelectorAll('.btn-view-details');
+  const viewButtons = document.querySelectorAll('.btn-view-details');
 
-    viewButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const trailId = parseInt(e.target.dataset.trailId);
-            // Using find() array method
-            const trail = trails.find(t => t.id === trailId);
-            if (trail) openTrailModal(trail);
-        });
+  viewButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      const trailId = parseInt(e.target.dataset.trailId);
+      // Using find() array method
+      const trail = trails.find(t => t.id === trailId);
+      if (trail) openTrailModal(trail);
     });
+  });
 }
 
 function openTrailModal(trail) {
-    // Using template literals for complex modal content
-    modalBody.innerHTML = `
+  // Using template literals for complex modal content
+  modalBody.innerHTML = `
     <img src="${trail.image}" alt="${trail.name}" class="modal-image" width="600" height="338">
     <h2 id="modal-trail-title">${trail.name}</h2>
     <p class="trail-location" style="font-size: 1.1rem; margin-bottom: 1rem;">📍 ${trail.location}</p>
@@ -168,14 +168,14 @@ function openTrailModal(trail) {
     </div>
   `;
 
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-    modalCloseBtn.focus();
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  modalCloseBtn.focus();
 }
 
 function closeModal() {
-    modal.style.display = 'none';
-    document.body.style.overflow = '';
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
 }
 
 // =========================================
@@ -184,21 +184,21 @@ function closeModal() {
 modalCloseBtn.addEventListener('click', closeModal);
 
 modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
+  if (e.target === modal) closeModal();
 });
 
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.style.display === 'flex') {
-        closeModal();
-    }
+  if (e.key === 'Escape' && modal.style.display === 'flex') {
+    closeModal();
+  }
 });
 
 // =========================================
 // INITIALIZATION
 // =========================================
 document.addEventListener('DOMContentLoaded', () => {
-    initNavigation();
-    updateCopyrightYear();
-    renderTrails(trails); // Render all trails initially
-    initFilters();
+  initNavigation();
+  updateCopyrightYear();
+  renderTrails(trails); // Render all trails initially
+  initFilters();
 });

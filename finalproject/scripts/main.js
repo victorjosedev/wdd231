@@ -4,7 +4,7 @@
 // =========================================
 
 // ES Modules Import
-import riders from '../data/riders.mjs';
+import riders from './data/riders.mjs';
 
 // =========================================
 // CONSTANTS & CONFIGURATION
@@ -12,9 +12,9 @@ import riders from '../data/riders.mjs';
 const WEATHER_API_KEY = 'c58d925ce171770c5649bf832d707fe4'; // 
 const DEFAULT_CITY = 'Moab';
 const STORAGE_KEYS = {
-    lastVisit: 'lastVisit',
-    preferredCity: 'preferredCity',
-    welcomeShown: 'welcomeShown'
+  lastVisit: 'lastVisit',
+  preferredCity: 'preferredCity',
+  welcomeShown: 'welcomeShown'
 };
 
 // =========================================
@@ -33,30 +33,30 @@ const weatherError = document.getElementById('weather-error');
 // 1. MOBILE NAVIGATION TOGGLE
 // =========================================
 function initNavigation() {
-    if (!menuToggle || !primaryNav) return;
+  if (!menuToggle || !primaryNav) return;
 
-    menuToggle.addEventListener('click', () => {
-        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', !isExpanded);
-        primaryNav.classList.toggle('open');
-    });
+  menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    primaryNav.classList.toggle('open');
+  });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!menuToggle.contains(e.target) && !primaryNav.contains(e.target)) {
-            menuToggle.setAttribute('aria-expanded', 'false');
-            primaryNav.classList.remove('open');
-        }
-    });
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!menuToggle.contains(e.target) && !primaryNav.contains(e.target)) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      primaryNav.classList.remove('open');
+    }
+  });
 }
 
 // =========================================
 // 2. DYNAMIC COPYRIGHT YEAR
 // =========================================
 function updateCopyrightYear() {
-    if (copyrightYear) {
-        copyrightYear.textContent = new Date().getFullYear();
-    }
+  if (copyrightYear) {
+    copyrightYear.textContent = new Date().getFullYear();
+  }
 }
 
 // =========================================
@@ -64,12 +64,12 @@ function updateCopyrightYear() {
 // Uses: Array methods, template literals, DOM manipulation
 // =========================================
 function renderRiders() {
-    if (!ridersContainer) return;
+  if (!ridersContainer) return;
 
-    // Using forEach array method
-    const ridersHTML = riders.map((rider) => {
-        // Using template literals
-        return `
+  // Using forEach array method
+  const ridersHTML = riders.map((rider) => {
+    // Using template literals
+    return `
       <article class="rider-card">
         <img 
           src="${rider.avatar}" 
@@ -93,20 +93,20 @@ function renderRiders() {
         </button>
       </article>
     `;
-    }).join('');
+  }).join('');
 
-    ridersContainer.innerHTML = ridersHTML;
+  ridersContainer.innerHTML = ridersHTML;
 
-    // Attach event listeners to each "View Profile" button
-    const riderButtons = document.querySelectorAll('.btn-rider-details');
-    riderButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const riderId = parseInt(e.target.dataset.riderId);
-            // Using filter array method
-            const rider = riders.filter(r => r.id === riderId)[0];
-            if (rider) openRiderModal(rider);
-        });
+  // Attach event listeners to each "View Profile" button
+  const riderButtons = document.querySelectorAll('.btn-rider-details');
+  riderButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      const riderId = parseInt(e.target.dataset.riderId);
+      // Using filter array method
+      const rider = riders.filter(r => r.id === riderId)[0];
+      if (rider) openRiderModal(rider);
     });
+  });
 }
 
 // =========================================
@@ -114,14 +114,14 @@ function renderRiders() {
 // Accessible modal with keyboard trap
 // =========================================
 function openRiderModal(rider) {
-    // Create modal structure dynamically
-    const modal = document.createElement('div');
-    modal.className = 'modal-overlay';
-    modal.setAttribute('role', 'dialog');
-    modal.setAttribute('aria-modal', 'true');
-    modal.setAttribute('aria-labelledby', 'modal-title');
+  // Create modal structure dynamically
+  const modal = document.createElement('div');
+  modal.className = 'modal-overlay';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-labelledby', 'modal-title');
 
-    modal.innerHTML = `
+  modal.innerHTML = `
     <div class="modal-content">
       <button class="modal-close" aria-label="Close modal">&times;</button>
       <img src="${rider.avatar}" alt="${rider.name}" class="modal-avatar" width="150" height="150">
@@ -142,37 +142,37 @@ function openRiderModal(rider) {
     </div>
   `;
 
-    document.body.appendChild(modal);
-    document.body.style.overflow = 'hidden';
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
 
-    // Close modal handlers
-    const closeButtons = modal.querySelectorAll('.modal-close, .modal-close-btn');
-    closeButtons.forEach(btn => {
-        btn.addEventListener('click', () => closeModal(modal));
-    });
+  // Close modal handlers
+  const closeButtons = modal.querySelectorAll('.modal-close, .modal-close-btn');
+  closeButtons.forEach(btn => {
+    btn.addEventListener('click', () => closeModal(modal));
+  });
 
-    // Close on overlay click
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal(modal);
-    });
+  // Close on overlay click
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal(modal);
+  });
 
-    // Close on ESC key
-    const escHandler = (e) => {
-        if (e.key === 'Escape') {
-            closeModal(modal);
-            document.removeEventListener('keydown', escHandler);
-        }
-    };
-    document.addEventListener('keydown', escHandler);
+  // Close on ESC key
+  const escHandler = (e) => {
+    if (e.key === 'Escape') {
+      closeModal(modal);
+      document.removeEventListener('keydown', escHandler);
+    }
+  };
+  document.addEventListener('keydown', escHandler);
 
-    // Focus trap
-    const firstFocusable = modal.querySelector('.modal-close');
-    if (firstFocusable) firstFocusable.focus();
+  // Focus trap
+  const firstFocusable = modal.querySelector('.modal-close');
+  if (firstFocusable) firstFocusable.focus();
 }
 
 function closeModal(modal) {
-    modal.remove();
-    document.body.style.overflow = '';
+  modal.remove();
+  document.body.style.overflow = '';
 }
 
 // =========================================
@@ -180,40 +180,40 @@ function closeModal(modal) {
 // Demonstrates async/await with error handling
 // =========================================
 async function fetchWeatherData(city) {
-    // Show loading state
-    weatherLoading.style.display = 'block';
-    weatherContent.style.display = 'none';
-    weatherError.style.display = 'none';
+  // Show loading state
+  weatherLoading.style.display = 'block';
+  weatherContent.style.display = 'none';
+  weatherError.style.display = 'none';
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&units=imperial&appid=${WEATHER_API_KEY}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&units=imperial&appid=${WEATHER_API_KEY}`;
 
-    try {
-        const response = await fetch(url);
+  try {
+    const response = await fetch(url);
 
-        // Check if response is OK (status 200-299)
-        if (!response.ok) {
-            throw new Error(`Weather API error: ${response.status} ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        displayWeather(data);
-    } catch (error) {
-        console.error('Error fetching weather:', error);
-        weatherLoading.style.display = 'none';
-        weatherError.style.display = 'block';
-        weatherError.querySelector('p').textContent =
-            `Unable to load weather for ${city}. Please check the city name or try again later.`;
+    // Check if response is OK (status 200-299)
+    if (!response.ok) {
+      throw new Error(`Weather API error: ${response.status} ${response.statusText}`);
     }
+
+    const data = await response.json();
+    displayWeather(data);
+  } catch (error) {
+    console.error('Error fetching weather:', error);
+    weatherLoading.style.display = 'none';
+    weatherError.style.display = 'block';
+    weatherError.querySelector('p').textContent =
+      `Unable to load weather for ${city}. Please check the city name or try again later.`;
+  }
 }
 
 function displayWeather(data) {
-    const { name, main, weather, wind, visibility } = data;
-    const iconCode = weather[0].icon;
-    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-    const description = weather[0].description;
+  const { name, main, weather, wind, visibility } = data;
+  const iconCode = weather[0].icon;
+  const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+  const description = weather[0].description;
 
-    // Using template literals for HTML construction
-    const weatherHTML = `
+  // Using template literals for HTML construction
+  const weatherHTML = `
     <div class="weather-location">
       <h3>${name}</h3>
       <p>Current conditions for your ride</p>
@@ -253,37 +253,37 @@ function displayWeather(data) {
     </div>
   `;
 
-    weatherLoading.style.display = 'none';
-    weatherContent.style.display = 'block';
-    weatherContent.innerHTML = weatherHTML;
+  weatherLoading.style.display = 'none';
+  weatherContent.style.display = 'block';
+  weatherContent.innerHTML = weatherHTML;
 
-    // Attach event listener to update button
-    const updateBtn = document.getElementById('update-weather-btn');
-    const cityInput = document.getElementById('city-input');
+  // Attach event listener to update button
+  const updateBtn = document.getElementById('update-weather-btn');
+  const cityInput = document.getElementById('city-input');
 
-    updateBtn.addEventListener('click', () => {
-        const newCity = cityInput.value.trim();
-        if (newCity) {
-            // Save preferred city to localStorage
-            localStorage.setItem(STORAGE_KEYS.preferredCity, newCity);
-            fetchWeatherData(newCity);
-        }
-    });
+  updateBtn.addEventListener('click', () => {
+    const newCity = cityInput.value.trim();
+    if (newCity) {
+      // Save preferred city to localStorage
+      localStorage.setItem(STORAGE_KEYS.preferredCity, newCity);
+      fetchWeatherData(newCity);
+    }
+  });
 
-    // Allow Enter key to submit
-    cityInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            updateBtn.click();
-        }
-    });
+  // Allow Enter key to submit
+  cityInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      updateBtn.click();
+    }
+  });
 }
 
 // =========================================
 // 6. LOCAL STORAGE - PREFERRED CITY
 // =========================================
 function loadPreferredCity() {
-    const savedCity = localStorage.getItem(STORAGE_KEYS.preferredCity);
-    return savedCity || DEFAULT_CITY;
+  const savedCity = localStorage.getItem(STORAGE_KEYS.preferredCity);
+  return savedCity || DEFAULT_CITY;
 }
 
 // =========================================
@@ -291,34 +291,34 @@ function loadPreferredCity() {
 // Uses localStorage to track visits
 // =========================================
 function checkFirstVisit() {
-    const welcomeShown = localStorage.getItem(STORAGE_KEYS.welcomeShown);
-    const lastVisit = localStorage.getItem(STORAGE_KEYS.lastVisit);
-    const now = Date.now();
+  const welcomeShown = localStorage.getItem(STORAGE_KEYS.welcomeShown);
+  const lastVisit = localStorage.getItem(STORAGE_KEYS.lastVisit);
+  const now = Date.now();
 
-    if (!welcomeShown) {
-        // First ever visit - show welcome modal
-        showWelcomeModal();
-        localStorage.setItem(STORAGE_KEYS.welcomeShown, 'true');
-    }
+  if (!welcomeShown) {
+    // First ever visit - show welcome modal
+    showWelcomeModal();
+    localStorage.setItem(STORAGE_KEYS.welcomeShown, 'true');
+  }
 
-    // Always update last visit timestamp
-    localStorage.setItem(STORAGE_KEYS.lastVisit, now.toString());
+  // Always update last visit timestamp
+  localStorage.setItem(STORAGE_KEYS.lastVisit, now.toString());
 
-    // Optional: Calculate days since last visit for analytics
-    if (lastVisit) {
-        const daysSinceLastVisit = Math.floor((now - parseInt(lastVisit)) / (1000 * 60 * 60 * 24));
-        console.log(`Days since last visit: ${daysSinceLastVisit}`);
-    }
+  // Optional: Calculate days since last visit for analytics
+  if (lastVisit) {
+    const daysSinceLastVisit = Math.floor((now - parseInt(lastVisit)) / (1000 * 60 * 60 * 24));
+    console.log(`Days since last visit: ${daysSinceLastVisit}`);
+  }
 }
 
 function showWelcomeModal() {
-    const modal = document.createElement('div');
-    modal.className = 'modal-overlay';
-    modal.setAttribute('role', 'dialog');
-    modal.setAttribute('aria-modal', 'true');
-    modal.setAttribute('aria-labelledby', 'welcome-title');
+  const modal = document.createElement('div');
+  modal.className = 'modal-overlay';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-labelledby', 'welcome-title');
 
-    modal.innerHTML = `
+  modal.innerHTML = `
     <div class="modal-content welcome-modal">
       <button class="modal-close" aria-label="Close welcome modal">&times;</button>
       <div class="welcome-icon">🚵‍♂️</div>
@@ -343,25 +343,25 @@ function showWelcomeModal() {
     </div>
   `;
 
-    document.body.appendChild(modal);
-    document.body.style.overflow = 'hidden';
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
 
-    const closeButtons = modal.querySelectorAll('.modal-close, .modal-close-btn');
-    closeButtons.forEach(btn => {
-        btn.addEventListener('click', () => closeModal(modal));
-    });
+  const closeButtons = modal.querySelectorAll('.modal-close, .modal-close-btn');
+  closeButtons.forEach(btn => {
+    btn.addEventListener('click', () => closeModal(modal));
+  });
 
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal(modal);
-    });
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal(modal);
+  });
 
-    const escHandler = (e) => {
-        if (e.key === 'Escape') {
-            closeModal(modal);
-            document.removeEventListener('keydown', escHandler);
-        }
-    };
-    document.addEventListener('keydown', escHandler);
+  const escHandler = (e) => {
+    if (e.key === 'Escape') {
+      closeModal(modal);
+      document.removeEventListener('keydown', escHandler);
+    }
+  };
+  document.addEventListener('keydown', escHandler);
 }
 
 // =========================================
@@ -369,8 +369,8 @@ function showWelcomeModal() {
 // (Could also be in CSS file)
 // =========================================
 function injectModalStyles() {
-    const style = document.createElement('style');
-    style.textContent = `
+  const style = document.createElement('style');
+  style.textContent = `
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -519,20 +519,20 @@ function injectModalStyles() {
       color: var(--color-green-primary);
     }
   `;
-    document.head.appendChild(style);
+  document.head.appendChild(style);
 }
 
 // =========================================
 // INITIALIZATION
 // =========================================
 document.addEventListener('DOMContentLoaded', () => {
-    injectModalStyles();
-    initNavigation();
-    updateCopyrightYear();
-    renderRiders();
-    checkFirstVisit();
+  injectModalStyles();
+  initNavigation();
+  updateCopyrightYear();
+  renderRiders();
+  checkFirstVisit();
 
-    // Load weather with preferred city
-    const preferredCity = loadPreferredCity();
-    fetchWeatherData(preferredCity);
+  // Load weather with preferred city
+  const preferredCity = loadPreferredCity();
+  fetchWeatherData(preferredCity);
 });
