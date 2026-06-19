@@ -19,7 +19,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(46, 125, 50, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 50%, var(--green-primary-10) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -489,7 +489,7 @@
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(10, 10, 10, 0.9);
+    background: var(--black-deep-90);
     display: flex;
     align-items: center;
     justify-content: center;

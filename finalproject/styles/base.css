@@ -21,8 +21,8 @@
 
     /* SEMÁNTICAS */
     --bg-body: var(--color-black-bg);
-    --bg-card: rgba(26, 26, 26, 0.85);
-    --bg-card-hover: rgba(42, 42, 42, 0.95);
+    --bg-card: #1A1A1AD9; /* hex + alpha (approx 0.85) */
+    --bg-card-hover: #2A2A2AF2; /* hex + alpha (approx 0.95) */
     --text-primary: var(--color-white);
     --text-secondary: var(--color-gray-mid);
     --accent: var(--color-orange-accent);
@@ -44,9 +44,14 @@
     --radius-sm: 6px;
     --radius-md: 12px;
     --radius-lg: 20px;
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-    --shadow-glow: 0 0 20px rgba(46, 125, 50, 0.3);
+    --shadow-sm: 0 2px 4px #0000004D; /* rgba(0,0,0,0.3) */
+    --shadow-md: 0 4px 12px #00000066; /* rgba(0,0,0,0.4) */
+    --shadow-glow: 0 0 20px #2E7D324C; /* rgba(46,125,50,0.3) */
+
+    /* Semi-transparent helpers (hex + alpha) */
+    --green-primary-10: #2E7D321A; /* 10% */
+    --green-primary-30: #2E7D324C; /* 30% */
+    --black-deep-90: #0A0A0AE6; /* 90% */
 
     /* Transiciones */
     --transition-fast: 0.15s ease;
